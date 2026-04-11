@@ -3,12 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clone Disney+</title>
+    <title>Disney+ | Filmes, Séries e Originais</title>
     <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="icon" href="src/img/favicon.ico">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <img src="src/img/disneyplus.svg" alt="Disney+" class="navbar__logo-img">
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="#inicio" class="navbar__link">Início</a></li>
+                <li class="navbar__item"><a href="#originals" class="navbar__link">Originais</a></li>
+                <li class="navbar__item"><a href="#populares" class="navbar__link">Populares</a></li>
+                <li class="navbar__item"><a href="#combos" class="navbar__link">Planos</a></li>
+            </ul>
+            <button class="navbar__button">Assinar</button>
+        </nav>
+    </header>
 
-    <h1>Clone Disney+ </h1>
-    
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero__content">
+            <div class="hero__text-group">
+                <h1 class="hero__title">Bem-vindo ao Disney+</h1>
+                <p class="hero__subtitle">Filmes, séries, documentários e muito mais. Sem limite.</p>
+                <div class="hero__buttons">
+                    <button class="hero__button hero__button--primary">Assinar Agora</button>
+                    <button class="hero__button hero__button--secondary">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Em Breve -->
+    <section class="section em-breve" id="originals">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Em Breve</h2>
+                <p class="section__subtitle">Novos lançamentos que você não pode perder</p>
+            </div>
+            <div class="carousel">
+                <div class="carousel__track">
+                    <div class="carousel__item carousel__item--large">
+                        <div class="card card--hover">
+                            <img src="src/img/em_breve/desencantada.jpg" alt="Desencantada" class="card__image">
+                            <div class="card__overlay">
+                                <p class="card__title">Desencantada</p>
+                                <button class="card__button">Mais Info</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__item carousel__item--large">
+                        <div class="card card--hover">
+                            <img src="src/img/em_breve/the_santa_clauses.jpg" alt="The Santa Clauses" class="card__image">
+                            <div class="card__overlay">
+                                <p class="card__title">The Santa Clauses</p>
+                                <button class="card__button">Mais Info</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__item carousel__item--large">
+                        <div class="card card--hover">
+                            <img src="src/img/em_breve/willow.jpg" alt="Willow" class="card__image">
+                            <div class="card__overlay">
+                                <p class="card__title">Willow</p>
+                                <button class="card__button">Mais Info</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__item carousel__item--large">
+                        <div class="card card--hover">
+                            <img src="src/img/em_breve/lobisomem.jpg" alt="Lobisome" class="card__image">
+                            <div class="card__overlay">
+                                <p class="card__title">Lobisome</p>
+                                <button class="card__button">Mais Info</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__item carousel__item--large">
+                        <div class="card card--hover">
+                            <img src="src/img/em_breve/spidey.jpg" alt="Spidey" class="card__image">
+                            <div class="card__overlay">
+                                <p class="card__title">Spidey e Seus Amigos Espetaculares</p>
+                                <button class="card__button">Mais Info</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__item carousel__item--large">
+                        <div class="card card--hover">
+                            <img src="src/img/em_breve/sem_limites.jpg" alt="Sem Limites" class="card__image">
+                            <div class="card__overlay">
+                                <p class="card__title">Sem Limites</p>
+                                <button class="card__button">Mais Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Carrossel de Populares -->
+    <section class="section section--alt populares" id="populares">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Populares na Plataforma</h2>
+                <p class="section__subtitle">Os títulos mais assistidos agora</p>
+            </div>
+            <div class="carousel">
+                <div class="carousel__track">
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/mais_populares/bluey.jpg" alt="Bluey" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/mais_populares/obi_wan.jpg" alt="Obi-Wan" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/mais_populares/cavaleira_da_lua.jpg" alt="Cavaleira da Lua" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/mais_populares/red.jpg" alt="Red" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/mais_populares/tudo_igual_sqn.jpg" alt="Tudo Igual" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/mais_populares/o_incrivel_dr_pol.jpg" alt="Dr. Pol" class="card__image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Carrossel - Continuar Assistindo -->
+    <section class="section continuar-assistindo" id="continuar">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Continuar Assistindo</h2>
+                <p class="section__subtitle">Onde você parou</p>
+            </div>
+            <div class="carousel">
+                <div class="carousel__track">
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/em_breve/desencantada.jpg" alt="Desencantada" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/em_breve/the_santa_clauses.jpg" alt="The Santa Clauses" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/mais_populares/bluey.jpg" alt="Bluey" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/em_breve/willow.jpg" alt="Willow" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/mais_populares/obi_wan.jpg" alt="Obi-Wan" class="card__image">
+                        </div>
+                    </div>
+                    <div class="carousel__item">
+                        <div class="card card--compact card--hover">
+                            <img src="src/img/em_breve/spidey.jpg" alt="Spidey" class="card__image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Dispositivos -->
+    <section class="section feature-section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <h2 class="section__title">Assista em Qualquer Lugar</h2>
+                    <p class="feature-text">Aproveite o Disney+ em seus dispositivos favoritos. Assista em 4K com som envolvente em TVs, computadores, tablets e celulares. Sem limite de dispositivos simultaneamente.</p>
+                    <ul class="feature-list">
+                        <li class="feature-list__item">✓ Acesso em múltiplos dispositivos</li>
+                        <li class="feature-list__item">✓ Qualidade até 4K Ultra HD</li>
+                        <li class="feature-list__item">✓ Download para assistir offline</li>
+                        <li class="feature-list__item">✓ Suporte Dolby Atmos</li>
+                    </ul>
+                    <button class="btn btn--primary">Confira Todos os Recursos</button>
+                </div>
+                <div class="feature-image">
+                    <img src="src/img/tv_pc_tablet_celular.png" alt="Dispositivos suportados" class="feature-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Combo -->
+    <section class="section section--alt combo" id="combos">
+        <div class="container">
+            <div class="combo-header">
+                <h2 class="section__title">Disney+ Combo+</h2>
+                <p class="section__subtitle">Mais entretenimento, um único preço</p>
+            </div>
+            <div class="combo-grid">
+                <div class="combo-card">
+                    <img src="src/img/fundo_combo_plus.png" alt="Combo Plus" class="combo-card__img">
+                </div>
+                <div class="combo-info">
+                    <h3 class="combo-info__title">Tudo que você ama em um só lugar</h3>
+                    <p class="combo-info__text">Combine Disney+, Star+ e ESPN+ e aproveite:</p>
+                    <ul class="combo-benefits">
+                        <li class="combo-benefits__item">📺 Milhares de filmes e séries</li>
+                        <li class="combo-benefits__item">🎬 Conteúdo exclusivo adults</li>
+                        <li class="combo-benefits__item">⚽ Esportes ao vivo e sob demanda</li>
+                        <li class="combo-benefits__item">🎯 Sem anúncios (plano premium)</li>
+                    </ul>
+                    <div class="combo-pricing">
+                        <p class="combo-price">A partir de <strong>R$ 19,90/mês</strong></p>
+                        <a href="#" class="btn btn--primary btn--large">Assinar Combo+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Comece sua jornada agora</h2>
+                <p class="cta-text">Acesso imediato a milhares de títulos premium</p>
+                <button class="btn btn--primary btn--large">Assinar Disney+</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__links-grid">
+                <div class="footer__section">
+                    <h4 class="footer__title">Sobre</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">Sobre o Disney+</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Suporte</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Contate-nos</a></li>
+                        <li><a href="#">Status do Serviço</a></li>
+                        <li><a href="#">Dispositivos Compatíveis</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Legal</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Redes</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 Disney. Todos os direitos reservados.</p>
+                <p class="footer__language">
+                    <select class="language-select">
+                        <option>Português (Brasil)</option>
+                        <option>English</option>
+                        <option>Español</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

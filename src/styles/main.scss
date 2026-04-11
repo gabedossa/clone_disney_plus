@@ -1,0 +1,76 @@
+@use "hero";
+@use "header";
+@use "sections";
+@use "footer";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Cores
+$bg_Color: #040714;
+$bg_Secondary: #0f1419;
+$corTextoPrincipal: silver;
+$corTextoSecundario: #f9f9f9;
+$corPrimaria: #0091ff;
+$corSecundaria: #1f80e0;
+
+// Fontes
+$font-primary: "Helvetica Neue", Arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $bg_Color;
+    color: $corTextoPrincipal;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    overflow-x: hidden;
+}
+
+@mixin text($fontSize:16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: $corTextoPrincipal;
+}
+
+@mixin title($fontSize:28px){
+    @include text($fontSize);
+    color: $corTextoSecundario;
+}
+
+.text--big{
+    @include text(18px);
+}
+.text{
+    @include text;
+}
+
+.text--small{
+    @include text(12px);
+}
+
+.title--big{
+    @include title(44px);
+}
+
+.link-text{
+    @include text(18px);
+    color: $corTextoSecundario;
+    text-decoration: underline;
+}
+
+.title{
+    @include title(40px);
+}
+
+.title--small{
+    @include title(28px);
+}

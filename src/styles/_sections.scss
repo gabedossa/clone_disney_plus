@@ -1,0 +1,264 @@
+// Cores
+$bg_Color: #040714;
+$bg_Secondary: #0f1419;
+$corTextoPrincipal: silver;
+$corTextoSecundario: #f9f9f9;
+$corPrimaria: #0091ff;
+$corSecundaria: #1f80e0;
+
+// ===== EM BREVE =====
+.em-breve {
+    padding: 4rem 2rem;
+    background-color: $bg_Color;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+
+            .em-breve__img {
+                filter: brightness(1.1);
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: filter 0.3s ease;
+        border-radius: 0.5rem;
+    }
+}
+
+// ===== MAIS POPULARES =====
+.mais-populares {
+    padding: 4rem 2rem;
+    background-color: $bg_Secondary;
+}
+
+.carrossel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 145, 255, 0.3);
+
+            .carrossel__img {
+                filter: brightness(1.15);
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        transition: filter 0.3s ease;
+    }
+}
+
+// ===== DISPOSITIVOS =====
+.dispositivos {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, $bg_Color 0%, $bg_Secondary 100%);
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    &__heading {
+        font-size: 2.5rem;
+        color: $corTextoSecundario;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    &__description {
+        font-size: 1rem;
+        color: $corTextoPrincipal;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+    }
+
+    &__button {
+        background-color: $corPrimaria;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken($corPrimaria, 10%);
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        object-fit: cover;
+    }
+}
+
+// ===== COMBO PLUS =====
+.combo-plus {
+    padding: 4rem 2rem;
+    background-color: $bg_Color;
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        object-fit: cover;
+    }
+
+    &__heading {
+        font-size: 2.5rem;
+        color: $corTextoSecundario;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    &__description {
+        font-size: 1rem;
+        color: $corTextoPrincipal;
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+    }
+
+    &__perks {
+        list-style: none;
+        margin: 1.5rem 0;
+        padding: 0;
+
+        li {
+            color: $corTextoSecundario;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+
+            &::before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                color: $corPrimaria;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__button {
+        background: linear-gradient(135deg, $corPrimaria, $corSecundaria);
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 145, 255, 0.4);
+        }
+    }
+}
+
+// ===== RESPONSIVIDADE =====
+@media (max-width: 1024px) {
+    .dispositivos__content,
+    .combo-plus__content {
+        grid-template-columns: 1fr;
+    }
+
+    .dispositivos__heading,
+    .combo-plus__heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .em-breve {
+        padding: 2rem 1rem;
+
+        &__grid {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+    }
+
+    .carrossel {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+
+        &__img {
+            height: 220px;
+        }
+    }
+
+    .dispositivos,
+    .combo-plus {
+        padding: 2rem 1rem;
+
+        &__heading {
+            font-size: 1.5rem;
+        }
+
+        &__description {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .em-breve__grid,
+    .carrossel {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 0.8rem;
+    }
+
+    .em-breve__img,
+    .carrossel__img {
+        height: 200px;
+    }
+}
