@@ -239,10 +239,24 @@ $corSecundaria: #1f80e0;
 }
 
 .combo-card {
+    position: relative;
+
     &__img {
         width: 100%;
         height: auto;
         border-radius: 0.5rem;
+        display: block;
+    }
+
+    &__logo {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+        max-width: 300px;
+        height: auto;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
     }
 }
 
