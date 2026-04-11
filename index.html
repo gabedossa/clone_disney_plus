@@ -245,31 +245,84 @@
     </section>
 
     <!-- Seção Combo -->
-    <section class="section section--alt combo" id="combos">
+    <section class="section section--alt planos" id="combos">
         <div class="container">
-            <div class="combo-header">
-                <h2 class="section__title">Disney+ Combo+</h2>
-                <p class="section__subtitle">Mais entretenimento, um único preço</p>
+            <div class="section__header">
+                <h2 class="section__title">Escolha seu Plano</h2>
+                <p class="section__subtitle">Cancele quando quiser. Sem fidelidade.</p>
             </div>
-            <div class="combo-grid">
-                <div class="combo-card">
-                    <img src="src/img/fundo_combo_plus.png" alt="Combo Plus" class="combo-card__img">
-                    <img src="src/img/logos/disney_star_plus_starzplay.png" alt="Disney+ Star+ StarzPlay" class="combo-card__logo">
-                </div>
-                <div class="combo-info">
-                    <h3 class="combo-info__title">Tudo que você ama em um só lugar</h3>
-                    <p class="combo-info__text">Combine Disney+, Star+ e ESPN+ e aproveite:</p>
-                    <ul class="combo-benefits">
-                        <li class="combo-benefits__item">📺 Milhares de filmes e séries</li>
-                        <li class="combo-benefits__item">🎬 Conteúdo exclusivo adults</li>
-                        <li class="combo-benefits__item">⚽ Esportes ao vivo e sob demanda</li>
-                        <li class="combo-benefits__item">🎯 Sem anúncios (plano premium)</li>
-                    </ul>
-                    <div class="combo-pricing">
-                        <p class="combo-price">A partir de <strong>R$ 19,90/mês</strong></p>
-                        <a href="#" class="btn btn--primary btn--large">Assinar Combo+</a>
+            <div class="planos-grid">
+
+                <!-- Plano Disney+ -->
+                <div class="plano-card">
+                    <div class="plano-card__header">
+                        <img src="src/img/logos/disneyplus_underline.png" alt="Disney+" class="plano-card__logo">
+                    </div>
+                    <div class="plano-card__body">
+                        <ul class="plano-card__features">
+                            <li>Filmes e séries Disney, Marvel, Star Wars e Pixar</li>
+                            <li>Conteúdo em até 4K Ultra HD</li>
+                            <li>Até 4 telas simultâneas</li>
+                            <li>Downloads para assistir offline</li>
+                        </ul>
+                    </div>
+                    <div class="plano-card__footer">
+                        <p class="plano-card__price">
+                            <span class="plano-card__price-from">por apenas</span>
+                            <strong class="plano-card__price-value">R$ 27,90</strong>
+                            <span class="plano-card__price-period">/mês</span>
+                        </p>
+                        <a href="#" class="btn btn--primary">Assinar Agora</a>
                     </div>
                 </div>
+
+                <!-- Plano Combo+ (destaque) -->
+                <div class="plano-card plano-card--featured">
+                    <div class="plano-card__badge">Mais Popular</div>
+                    <div class="plano-card__header">
+                        <img src="src/img/logos/disney_star_plus.png" alt="Disney+ Star+" class="plano-card__logo">
+                    </div>
+                    <div class="plano-card__body">
+                        <ul class="plano-card__features">
+                            <li>Tudo do plano Disney+</li>
+                            <li>Star+ incluso: séries adultas e esportes</li>
+                            <li>ESPN+ com esportes ao vivo</li>
+                            <li>Conteúdo em até 4K Ultra HD</li>
+                        </ul>
+                    </div>
+                    <div class="plano-card__footer">
+                        <p class="plano-card__price">
+                            <span class="plano-card__price-from">por apenas</span>
+                            <strong class="plano-card__price-value">R$ 45,90</strong>
+                            <span class="plano-card__price-period">/mês</span>
+                        </p>
+                        <a href="#" class="btn btn--primary">Assinar Agora</a>
+                    </div>
+                </div>
+
+                <!-- Plano Combo+ Starzplay -->
+                <div class="plano-card">
+                    <div class="plano-card__header">
+                        <img src="src/img/logos/disney_star_plus_starzplay.png" alt="Disney+ Star+ StarzPlay" class="plano-card__logo">
+                    </div>
+                    <div class="plano-card__body">
+                        <ul class="plano-card__features">
+                            <li>Tudo do Combo+</li>
+                            <li>StarzPlay incluso</li>
+                            <li>Mais de 15.000 títulos</li>
+                            <li>Sem anúncios em todos os serviços</li>
+                        </ul>
+                    </div>
+                    <div class="plano-card__footer">
+                        <p class="plano-card__price">
+                            <span class="plano-card__price-from">por apenas</span>
+                            <strong class="plano-card__price-value">R$ 55,90</strong>
+                            <span class="plano-card__price-period">/mês</span>
+                        </p>
+                        <a href="#" class="btn btn--primary">Assinar Agora</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
