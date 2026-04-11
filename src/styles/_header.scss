@@ -91,7 +91,7 @@ $corPrimaria: #0091ff;
         flex-shrink: 0;
 
         &:hover {
-            background-color: darken($corPrimaria, 10%);
+            background-color: color.adjust($corPrimaria, $lightness: -10%);
         }
     }
 }

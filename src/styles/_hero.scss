@@ -71,7 +71,7 @@ $corPrimaria: #0091ff;
     letter-spacing: 1px;
 
     &:hover {
-        background-color: darken($corPrimaria, 15%);
+        background-color: color.adjust($corPrimaria, $lightness: -15%);
         transform: translateY(-3px);
         box-shadow: 0 8px 24px rgba(0, 145, 255, 0.4);
     }
