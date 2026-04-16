@@ -1,122 +1,108 @@
-// Cores
 @use "sass:color";
-$bg_Color: #040714;
-$corTextoPrincipal: silver;
-$corTextoSecundario: #f9f9f9;
+
 $corPrimaria: #0091ff;
 
 .header {
-    background-color: rgba(4, 7, 20, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem 2rem;
-    position: sticky;
+    padding: 1rem 1.5rem;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+
+    &--scrolled {
+        background-color: #040714;
+    }
 }
 
 .navbar {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
-
-    &__logo {
-        flex-shrink: 0;
-    }
 
     &__logo-img {
-        height: 50px;
+        height: 36px;
         width: auto;
-        transition: transform 0.3s ease;
+        display: block;
+        opacity: 1;
+        transition: opacity 0.3s ease;
 
-        &:hover {
-            transform: scale(1.05);
+        &--hidden {
+            opacity: 0;
+            pointer-events: none;
         }
     }
 
-    &__menu {
+    &__actions {
         display: flex;
-        list-style: none;
-        gap: 2rem;
-        flex: 1;
-        margin: 0;
-        padding: 0;
-    }
-
-    &__item {
-        margin: 0;
-    }
-
-    &__link {
-        color: $corTextoPrincipal;
-        text-decoration: none;
-        font-size: 0.95rem;
-        font-weight: 500;
-        transition: color 0.3s ease;
-        position: relative;
-
-        &:hover {
-            color: $corPrimaria;
-
-            &::after {
-                width: 100%;
-            }
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: $corPrimaria;
-            transition: width 0.3s ease;
-        }
+        align-items: center;
+        gap: 0.6rem;
     }
 
     &__button {
-        background-color: $corPrimaria;
-        color: white;
-        border: none;
-        padding: 0.6rem 1.5rem;
-        border-radius: 0.25rem;
-        font-size: 0.9rem;
-        font-weight: 600;
+        padding: 0.5rem 1.2rem;
+        border-radius: 0.2rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
         cursor: pointer;
         white-space: nowrap;
-        transition: background-color 0.3s ease;
-        flex-shrink: 0;
+        transition: background-color 0.2s ease, color 0.2s ease;
 
-        &:hover {
-            background-color: color.adjust($corPrimaria, $lightness: -10%);
+        &--primary {
+            background-color: $corPrimaria;
+            color: #fff;
+            border: 2px solid $corPrimaria;
+
+            &:hover {
+                background-color: color.adjust($corPrimaria, $lightness: -10%);
+                border-color: color.adjust($corPrimaria, $lightness: -10%);
+            }
+        }
+
+        &--outline {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        &--hidden {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
         }
     }
 }
 
-// Responsividade
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .header {
-        padding: 1rem;
+        padding: 0.65rem 1rem;
     }
 
-    .navbar {
-        gap: 1rem;
+    .navbar__logo-img {
+        height: 26px;
+    }
 
-        &__menu {
-            display: none;
-        }
+    .navbar__actions {
+        gap: 0.4rem;
+    }
 
-        &__logo-img {
-            height: 40px;
-        }
+    .navbar__button {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.02em;
+    }
+}
 
-        &__button {
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
-        }
+@media (max-width: 375px) {
+    .navbar__button--primary {
+        display: none; /* no topo já está oculto; quando scrollado evita overflow */
     }
 }

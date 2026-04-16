@@ -485,42 +485,106 @@ $corSecundaria: #1f80e0;
 }
 
 @media (max-width: 768px) {
-    .planos-grid {
-        max-width: 100%;
+    .container {
+        padding: 0 1.25rem;
     }
-}
 
-@media (max-width: 768px) {
     .section {
         padding: 2.5rem 0;
 
         &__title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        &__subtitle {
+            font-size: 0.9rem;
+        }
+    }
+
+    .planos-grid {
+        max-width: 100%;
+    }
+
+    .plano-card {
+        &__price-value {
+            font-size: 1.6rem;
         }
     }
 
     .carousel {
         &__item {
-            flex: 0 0 160px;
+            flex: 0 0 150px;
 
             &--large {
-                flex: 0 0 200px;
+                flex: 0 0 190px;
             }
         }
     }
 
     .card {
         &--compact .card__image {
-            height: 220px;
+            height: 200px;
         }
 
         &__image {
-            height: 280px;
+            height: 240px;
         }
     }
 
     .cta-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .cta-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 2rem 0;
+
+        &__title {
+            font-size: 1.2rem;
+        }
+    }
+
+    .carousel {
+        &__item {
+            flex: 0 0 130px;
+
+            &--large {
+                flex: 0 0 165px;
+            }
+        }
+    }
+
+    .card {
+        &__image {
+            height: 200px;
+        }
+
+        &--compact .card__image {
+            height: 175px;
+        }
+    }
+
+    .plano-card {
+        &__body li {
+            font-size: 0.82rem;
+        }
+
+        &__price-value {
+            font-size: 1.4rem;
+        }
+    }
+
+    .cta-title {
+        font-size: 1.3rem;
     }
 }
 
@@ -740,17 +804,21 @@ $corSecundaria: #1f80e0;
         padding: 2rem 1rem;
 
         &__grid {
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.75rem;
+        }
+
+        &__img {
+            height: 220px;
         }
     }
 
     .carrossel {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 0.75rem;
 
         &__img {
-            height: 220px;
+            height: 200px;
         }
     }
 
@@ -769,15 +837,43 @@ $corSecundaria: #1f80e0;
 }
 
 @media (max-width: 480px) {
-    .em-breve__grid,
-    .carrossel {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 0.8rem;
+    .em-breve {
+        padding: 1.5rem 0.75rem;
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+        }
+
+        &__img {
+            height: 180px;
+        }
     }
 
+    .carrossel {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+
+        &__img {
+            height: 170px;
+        }
+    }
+
+    .dispositivos__heading,
+    .combo-plus__heading {
+        font-size: 1.25rem;
+    }
+
+    .dispositivos__description,
+    .combo-plus__description {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 375px) {
     .em-breve__img,
     .carrossel__img {
-        height: 200px;
+        height: 150px;
     }
 }
 

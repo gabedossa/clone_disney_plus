@@ -1,172 +1,245 @@
-// Cores
 @use "sass:color";
-$corTextoSecundario: #f9f9f9;
-$corPrimaria: #0091ff;
+$corRoxa: #6c00ff;
 
 .hero {
-    padding: 5.6vw;
-    min-height: 80vh;
+    min-height: 100vh;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: center right;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     position: relative;
     overflow: hidden;
 
     &::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: linear-gradient(
             to right,
-            rgba(4, 7, 20, 0.95) 0%,
-            rgba(4, 7, 20, 0.6) 60%,
-            rgba(4, 7, 20, 0.1) 100%
+            rgba(4, 7, 20, 0.97) 0%,
+            rgba(4, 7, 20, 0.80) 45%,
+            rgba(4, 7, 20, 0.15) 100%
         );
         z-index: 1;
     }
 }
 
-.hero__text-group {
+.hero__content {
     position: relative;
     z-index: 2;
-    text-align: left;
-    max-width: 580px;
+    padding: 0 4vw;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
     animation: fadeInUp 0.8s ease-out;
 }
 
-.hero__title {
-    font-size: 3.5rem;
-    color: $corTextoSecundario;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.15;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+/* Logo */
+.hero__logo {
+    width: 260px;
+    height: auto;
+    display: block;
+    margin-bottom: 1.2rem;
 }
 
-.hero__subtitle {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+/* Tagline */
+.hero__tagline {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 1.6rem;
+    line-height: 1.4;
 }
 
-.hero__buttons {
+/* "Assinar o Disney+" sublinhado */
+.hero__subscribe-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin: 0 0 0.35rem;
+}
+
+/* Preço principal */
+.hero__plan-price {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.82rem;
+    margin: 0 0 1.2rem;
+}
+
+/* Logos acima dos botões */
+.hero__combo-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    margin-bottom: 0.25rem;
+}
+
+.hero__combo-sm-logo {
+    height: 22px;
+    width: auto;
+}
+
+.hero__combo-badge {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.hero__combo-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+    height: 52px;
+}
+
+.hero__combo-right-logos {
+    height: 34px;
+    width: auto;
+}
+
+/* Botões e preços */
+.hero__plan-actions {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    width: 100%;
 }
 
-.hero__button {
+.hero__plan-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.hero__btn {
+    width: 100%;
+    background-color: $corRoxa;
+    color: #fff;
     border: none;
-    padding: 0.9rem 2.5rem;
+    padding: 0.9rem 1rem;
     border-radius: 0.25rem;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
     cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
 
-    &--primary {
-        background-color: $corPrimaria;
-        color: white;
-
-        &:hover {
-            background-color: color.adjust($corPrimaria, $lightness: -12%);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0, 145, 255, 0.45);
-        }
+    &:hover {
+        background-color: color.adjust($corRoxa, $lightness: 8%);
     }
+}
 
-    &--secondary {
-        background-color: transparent;
-        color: white;
-        border: 2px solid rgba(255, 255, 255, 0.7);
+.hero__plan-price-small {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.78rem;
+    margin: 0;
+    text-align: center;
+}
 
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: white;
-            transform: translateY(-3px);
-        }
-    }
+/* Disclaimer */
+.hero__disclaimer {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.65rem;
+    margin-top: 0.6rem;
+    line-height: 1.5;
+}
+
+/* Logos de franquias na base */
+.hero__brands {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 4vw;
+    z-index: 2;
+}
+
+.hero__brands-img {
+    height: 18px;
+    width: auto;
+    opacity: 0.6;
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 1024px) {
-    .hero {
-        min-height: 70vh;
-        background-attachment: scroll;
-    }
-
-    .hero__title {
-        font-size: 2.8rem;
-    }
-
-    .hero__subtitle {
-        font-size: 1.05rem;
-    }
-}
-
+/* Responsividade */
 @media (max-width: 768px) {
     .hero {
-        padding: 2rem;
-        min-height: 60vh;
-        background-position: right center;
-        align-items: flex-end;
-        padding-bottom: 3rem;
+        background-position: center center;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            background: rgba(4, 7, 20, 0.88);
+        }
     }
 
-    .hero__text-group {
+    .hero__content {
         max-width: 100%;
+        padding: 5rem 1.5rem 2rem;
     }
 
-    .hero__title {
-        font-size: 2rem;
-    }
+    .hero__logo { width: 180px; }
 
-    .hero__subtitle {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-    }
+    .hero__tagline { font-size: 1.25rem; }
 
-    .hero__button {
-        padding: 0.75rem 1.8rem;
-        font-size: 0.875rem;
+    .hero__brands {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding: 1.5rem;
-        min-height: 50vh;
+    .hero__content {
+        padding: 5rem 1.25rem 2rem;
     }
 
-    .hero__title {
-        font-size: 1.6rem;
+    .hero__logo { width: 150px; }
+
+    .hero__tagline {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
     }
 
-    .hero__buttons {
+    .hero__plan-actions {
         flex-direction: column;
-
-        .hero__button {
-            text-align: center;
-        }
+        gap: 0.75rem;
     }
+
+    .hero__combo-right {
+        height: auto;
+        margin-bottom: 0.4rem;
+    }
+
+    .hero__combo-right-logos { height: 26px; }
+    .hero__combo-sm-logo    { height: 18px; }
+    .hero__combo-badge      { font-size: 1.1rem; }
+
+    .hero__btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero__logo { width: 130px; }
+
+    .hero__tagline { font-size: 1rem; }
+
+    .hero__subscribe-title { font-size: 0.82rem; }
+    .hero__plan-price      { font-size: 0.75rem; }
 }

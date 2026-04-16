@@ -14,27 +14,46 @@
             <div class="navbar__logo">
                 <img src="src/img/disneyplus.svg" alt="Disney+" class="navbar__logo-img">
             </div>
-            <ul class="navbar__menu">
-                <li class="navbar__item"><a href="#inicio" class="navbar__link">Início</a></li>
-                <li class="navbar__item"><a href="#originals" class="navbar__link">Originais</a></li>
-                <li class="navbar__item"><a href="#populares" class="navbar__link">Populares</a></li>
-                <li class="navbar__item"><a href="#combos" class="navbar__link">Planos</a></li>
-                <li class="navbar__item"><a href="#faq" class="navbar__link">FAQ</a></li>
-            </ul>
-            <button class="navbar__button">Assinar</button>
+            <div class="navbar__actions">
+                <button class="navbar__button navbar__button--primary">ASSINE AGORA</button>
+                <button class="navbar__button navbar__button--outline">ENTRAR</button>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio" style="background-image: url('src/img/hero_desktop.jpeg');">
-            <div class="hero__text-group">
-                <h1 class="hero__title">Bem-vindo ao Disney+</h1>
-                <p class="hero__subtitle">Filmes, séries, documentários e muito mais. Sem limite.</p>
-                <div class="hero__buttons">
-                    <button class="hero__button hero__button--primary">Assinar Agora</button>
-                    <button class="hero__button hero__button--secondary">Saiba Mais</button>
+        <div class="hero__content">
+            <img src="src/img/disneyplus.svg" alt="Disney+" class="hero__logo">
+            <p class="hero__tagline">As melhores histórias em um só lugar.</p>
+
+            <p class="hero__subscribe-title">Assinar o Disney+</p>
+            <p class="hero__plan-price">R$ 27,90/mês o R$ 279,90/ano à vista*</p>
+
+            <div class="hero__plan-actions">
+                <div class="hero__plan-action">
+                    <div class="hero__combo-left">
+                        <img src="src/img/logos/disney_star_plus_sm.png" alt="Disney+ Star+" class="hero__combo-sm-logo">
+                        <span class="hero__combo-badge">COMBO+</span>
+                    </div>
+                    <button class="hero__btn">ASSINE AGORA</button>
+                    <p class="hero__plan-price-small">R$ 45,90/mês*</p>
+                </div>
+                <div class="hero__plan-action">
+                    <div class="hero__combo-right">
+                        <img src="src/img/logos/disney_star_plus_starzplay.png" alt="Star+ Disney+ StarzPlay" class="hero__combo-right-logos">
+                    </div>
+                    <button class="hero__btn">ASSINE AGORA</button>
+                    <p class="hero__plan-price-small">R$ 55,90/mês*</p>
                 </div>
             </div>
+
+            <p class="hero__disclaimer">*O preço pode variar caso a assinatura seja feita através de outras plataformas.</p>
+        </div>
+
+        <div class="hero__brands">
+            <img src="src/img/logos/disney_star_plus_starzplay_underline.png" alt="Disney | PIXAR | MARVEL | Star Wars | National Geographic" class="hero__brands-img">
+        </div>
     </section>
 
     <!-- Seção Em Breve -->
@@ -473,6 +492,34 @@
                 }
             });
         });
+    </script>
+    <script>
+        (function () {
+            var header = document.querySelector('.header');
+            var headerLogo = document.querySelector('.navbar__logo-img');
+            var hero = document.querySelector('.hero');
+
+            // Esconde logo do header enquanto o hero está visível
+            var btnAssine = document.querySelector('.navbar__button--primary');
+
+            var observer = new IntersectionObserver(function (entries) {
+                var heroVisible = entries[0].isIntersecting;
+                headerLogo.classList.toggle('navbar__logo-img--hidden', heroVisible);
+                btnAssine.classList.toggle('navbar__button--hidden', heroVisible);
+            }, { threshold: 0 });
+            observer.observe(hero);
+
+            // Fundo escuro ao sair do topo
+            function onScroll() {
+                if (window.scrollY > 10) {
+                    header.classList.add('header--scrolled');
+                } else {
+                    header.classList.remove('header--scrolled');
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
     </script>
 </body>
 </html>
