@@ -780,3 +780,112 @@ $corSecundaria: #1f80e0;
         height: 200px;
     }
 }
+
+// ===== FAQ =====
+.faq {
+    background-color: $bg_Color;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 0.5rem;
+        background-color: $bg_Secondary;
+        overflow: hidden;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            border-color: rgba(0, 145, 255, 0.3);
+        }
+
+        &--open {
+            border-color: $corPrimaria;
+            box-shadow: 0 0 0 1px rgba(0, 145, 255, 0.2);
+
+            .faq__icon {
+                transform: rotate(45deg);
+                color: $corPrimaria;
+            }
+
+            .faq__answer {
+                max-height: 400px;
+                padding: 0 1.5rem 1.25rem;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__question {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        text-align: left;
+        color: $corTextoSecundario;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: inherit;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $corPrimaria;
+        }
+    }
+
+    &__icon {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1;
+        color: $corTextoPrincipal;
+        flex-shrink: 0;
+        transition: transform 0.3s ease, color 0.3s ease;
+        display: inline-block;
+    }
+
+    &__answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 1.5rem;
+        opacity: 0;
+        transition: max-height 0.4s ease, padding 0.3s ease, opacity 0.3s ease;
+
+        p {
+            color: $corTextoPrincipal;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .faq {
+        &__question {
+            font-size: 0.95rem;
+            padding: 1rem 1.25rem;
+        }
+
+        &__answer {
+            padding: 0 1.25rem;
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        &__item--open .faq__answer {
+            padding: 0 1.25rem 1rem;
+        }
+    }
+}
